@@ -120,6 +120,17 @@ Preprocessing lesson and adapt it to your tissue sample.
 SpatialFeaturePlot(st_obj, features = "nCount_Spatial")
 ```
 
+``` warning
+Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
+ℹ Please use tidy evaluation idioms with `aes()`.
+ℹ See also `vignette("ggplot2-in-packages")` for more information.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated.
+```
+
 <img src="fig/final-exercise-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::
@@ -1475,7 +1486,7 @@ Calculating gene attributes
 ```
 
 ``` output
-Wall clock passed: Time difference of 5.067075 mins
+Wall clock passed: Time difference of 5.207818 mins
 ```
 
 ``` output
