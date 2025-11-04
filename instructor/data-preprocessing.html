@@ -359,7 +359,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data Preprocessing</h1>
-        <p>Last updated on 2025-10-07 |
+        <p>Last updated on 2025-11-04 |
 
         <a href="https://github.com/smcclatchy/spatial-transcriptomics/edit/main/episodes/data-preprocessing.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -561,7 +561,7 @@ you should see an <code>raw_st</code> object in your
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>If the data does not load in correctly, verify that the students used
 the mode = “wb” argument in download.file() during the Setup. We have
@@ -630,7 +630,7 @@ it?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Solution 1 </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -687,7 +687,7 @@ computer to assign up/down and left/right to the image?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution 2 </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Look at the spots in each corner. In the upper-left, you will see the
 following patterns:</p>
@@ -745,18 +745,6 @@ the tissue in blue and background spots in red.</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">SpatialPlot</span><span class="op">(</span><span class="va">raw_st</span>, group.by <span class="op">=</span> <span class="st">"in_tissue"</span>, alpha <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span></span></code></pre>
 </div>
-<div class="codewrapper">
-<h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="warning" tabindex="0"><code>Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
-ℹ Please use tidy evaluation idioms with `aes()`.
-ℹ See also `vignette("ggplot2-in-packages")` for more information.
-ℹ The deprecated feature was likely used in the Seurat package.
-  Please report the issue at &lt;https://github.com/satijalab/seurat/issues&gt;.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.</code></pre>
-</div>
 <figure style="text-align: center"><img src="../fig/data-preprocessing-rendered-unnamed-chunk-8-1.png" alt="Histology slide with tissue and background spots labelled" class="figure mx-auto d-block"><figcaption>
 Spots identified in Tissue and Background
 </figcaption></figure><p>The 10x platform tags each molecule with a Unique Molecular
@@ -766,7 +754,7 @@ expect most of the UMI counts to be in the tissue spots. The Seurat
 object metadata contains the UMI count in each spot in a column called
 <code>nCount_Spatial</code>. Let’s plot the UMI counts in the tissue and
 background spots.</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -784,7 +772,7 @@ UMI Counts in Tissue and Background
 calls genes <em>features</em>, so we will plot the
 <code>nFeature_Spatial</code> value. This is stored in the metadata of
 the Seurat object.</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -817,7 +805,7 @@ occur in the background spots?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solution 3 </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>When the tissue section is lysed, some transcripts may leak out of
 the cells and into the background region of the slide.</li>
@@ -831,7 +819,7 @@ will work directly with the filtered file. From this point forward, we
 will work with the filtered data object.</p>
 <p>Let’s plot the spots in the tissue in the filtered object to verify
 that it is only using spots in the tissue.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -859,7 +847,7 @@ function to look at these values. We can color the spots based on the
 spot metadata stored in the Seurat object. You can find these column
 names by looking at the <code>meta.data</code> slot of the Seurat
 object.</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -885,7 +873,7 @@ AAACAGGGTCTATATT-1        47        13               8064               3665</co
 </div>
 <p>To plot the UMI counts, we will use the <code>nCount_Spatial</code>
 column in the spot metadata.</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -903,7 +891,7 @@ in the tissue. It is less clear why the expression is low in the
 lower-left corner.</p>
 <p>We can also look at the number of genes detected in each spot using
 <code>nFeature_Spatial</code>.</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -926,7 +914,7 @@ some variation in UMI counts in different layers of the brain.</p>
 data. To do this, we are going to filter out genes that have no
 expression across the cells.</p>
 <p>How many genes to we have before filtering?</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -940,7 +928,7 @@ expression across the cells.</p>
 <p>Next, we will get the raw counts, calculate the sum of each gene’s
 exprsssion across all spots, and filter the Seurat object to retain
 genes with summed counts greater than zero.</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -972,7 +960,7 @@ Not validating FOV objects</code></pre>
 <pre class="warning" tabindex="0"><code>Warning: Not validating Seurat objects</code></pre>
 </div>
 <p>How many genes to we have after filtering?</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1067,7 +1055,7 @@ any links that you are not going to use.
   "url": "https://smcclatchy.github.io/spatial-transcriptomics/instructor/data-preprocessing.html",
   "identifier": "https://smcclatchy.github.io/spatial-transcriptomics/instructor/data-preprocessing.html",
   "dateCreated": "2024-03-01",
-  "dateModified": "2025-10-07",
+  "dateModified": "2025-11-04",
   "datePublished": "2025-11-04"
 }
 

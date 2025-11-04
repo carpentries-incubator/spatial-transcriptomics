@@ -355,7 +355,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Remove Low-quality Spots</h1>
-        <p>Last updated on 2025-10-07 |
+        <p>Last updated on 2025-11-04 |
 
         <a href="https://github.com/smcclatchy/spatial-transcriptomics/edit/main/episodes/remove-low-quality-spots.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -658,18 +658,6 @@ whether we will keep them.</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">SpatialDimPlot</span><span class="op">(</span><span class="va">filter_st</span>, group.by <span class="op">=</span> <span class="st">"keep"</span><span class="op">)</span></span></code></pre>
 </div>
-<div class="codewrapper">
-<h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="warning" tabindex="0"><code>Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
-ℹ Please use tidy evaluation idioms with `aes()`.
-ℹ See also `vignette("ggplot2-in-packages")` for more information.
-ℹ The deprecated feature was likely used in the Seurat package.
-  Please report the issue at &lt;https://github.com/satijalab/seurat/issues&gt;.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.</code></pre>
-</div>
 <figure><img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>When you examine the spots that have been flagged, it is important to
 look for patterns. If a contiguous section of tissue contains spots that
 will be removed, it is worth looking at the histology slide to see if
@@ -679,7 +667,7 @@ question, you may want to remove those spots. But you should always look
 for patterns in the removed spots and convince yourself that they are
 not biasing your results.</p>
 <p>Note that we will only remove a few spots in this filtering step.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -694,7 +682,7 @@ FALSE  TRUE
 </div>
 <p>We can remove the spots directly using the following syntax. In this
 case, the “columns” of the Seurat object correspond to the spots.</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -726,9 +714,9 @@ the tissue structure?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Solution 1 </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -774,9 +762,9 @@ the tissue structure?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution 2 </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -791,14 +779,14 @@ lower left. Later in the lesson, we will find that this is the “white
 matter”, and this region has different expression from the rest of the
 tissue section. In fact, mitochondrial expression in general seems to be
 higher in the upper right area.</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">SpatialFeaturePlot</span><span class="op">(</span><span class="va">obj</span>, features <span class="op">=</span> <span class="st">"percent.mt"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Percentage MitochondrialExpression"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb25">
+<figure><img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -883,7 +871,7 @@ any links that you are not going to use.
   "url": "https://smcclatchy.github.io/spatial-transcriptomics/remove-low-quality-spots.html",
   "identifier": "https://smcclatchy.github.io/spatial-transcriptomics/remove-low-quality-spots.html",
   "dateCreated": "2024-03-01",
-  "dateModified": "2025-10-07",
+  "dateModified": "2025-11-04",
   "datePublished": "2025-11-04"
 }
 
