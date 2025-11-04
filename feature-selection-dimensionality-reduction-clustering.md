@@ -130,26 +130,6 @@ sct_st <- ScaleData(sct_st) %>%
                RunPCA(npcs = 75, verbose = FALSE)
 ```
 
-``` warning
-Warning: The `slot` argument of `SetAssayData()` is deprecated as of SeuratObject 5.0.0.
-ℹ Please use the `layer` argument instead.
-ℹ The deprecated feature was likely used in the Seurat package.
-  Please report the issue at <https://github.com/satijalab/seurat/issues>.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.
-```
-
-``` warning
-Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
-ℹ Please use the `layer` argument instead.
-ℹ The deprecated feature was likely used in the Seurat package.
-  Please report the issue at <https://github.com/satijalab/seurat/issues>.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.
-```
-
 ``` output
 Centering and scaling data matrix
 ```
@@ -165,17 +145,6 @@ indicates that adding more PCs doesn't account for more of the variance.
 
 ``` r
 ElbowPlot(sct_st, ndims = 75)
-```
-
-``` warning
-Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
-ℹ Please use tidy evaluation idioms with `aes()`.
-ℹ See also `vignette("ggplot2-in-packages")` for more information.
-ℹ The deprecated feature was likely used in the Seurat package.
-  Please report the issue at <https://github.com/satijalab/seurat/issues>.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.
 ```
 
 <img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />

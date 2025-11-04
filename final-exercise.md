@@ -120,17 +120,6 @@ Preprocessing lesson and adapt it to your tissue sample.
 SpatialFeaturePlot(st_obj, features = "nCount_Spatial")
 ```
 
-``` warning
-Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
-ℹ Please use tidy evaluation idioms with `aes()`.
-ℹ See also `vignette("ggplot2-in-packages")` for more information.
-ℹ The deprecated feature was likely used in the Seurat package.
-  Please report the issue at <https://github.com/satijalab/seurat/issues>.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.
-```
-
 <img src="fig/final-exercise-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::
@@ -193,16 +182,6 @@ st_obj <- SCTransform(st_obj,
 Running SCTransform on assay: Spatial
 ```
 
-``` warning
-Warning: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
-ℹ Please use the `layer` argument instead.
-ℹ The deprecated feature was likely used in the Seurat package.
-  Please report the issue at <https://github.com/satijalab/seurat/issues>.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.
-```
-
 ``` output
 vst.flavor='v2' set. Using model with fixed slope and excluding poisson genes.
 ```
@@ -240,9 +219,6 @@ Using 2000 genes, 4992 cells
 ``` warning
 Warning in theta.ml(Y, mu, sum(w), w, limit = control$maxit, trace =
 control$trace > : iteration limit reached
-```
-
-``` warning
 Warning in theta.ml(Y, mu, sum(w), w, limit = control$maxit, trace =
 control$trace > : iteration limit reached
 Warning in theta.ml(Y, mu, sum(w), w, limit = control$maxit, trace =
@@ -1486,7 +1462,7 @@ Calculating gene attributes
 ```
 
 ``` output
-Wall clock passed: Time difference of 5.207818 mins
+Wall clock passed: Time difference of 5.171929 mins
 ```
 
 ``` output
@@ -1499,16 +1475,6 @@ Centering data matrix
 
 ``` output
 Place corrected count matrix in counts slot
-```
-
-``` warning
-Warning: The `slot` argument of `SetAssayData()` is deprecated as of SeuratObject 5.0.0.
-ℹ Please use the `layer` argument instead.
-ℹ The deprecated feature was likely used in the Seurat package.
-  Please report the issue at <https://github.com/satijalab/seurat/issues>.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.
 ```
 
 ``` output
