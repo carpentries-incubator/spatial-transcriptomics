@@ -1462,7 +1462,7 @@ Calculating gene attributes
 ```
 
 ``` output
-Wall clock passed: Time difference of 5.151127 mins
+Wall clock passed: Time difference of 5.171407 mins
 ```
 
 ``` output
