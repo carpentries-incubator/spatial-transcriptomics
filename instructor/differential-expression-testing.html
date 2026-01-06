@@ -360,7 +360,7 @@ Spatially Variable Genes</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Differential Expression Testing</h1>
-        <p>Last updated on 2025-12-02 |
+        <p>Last updated on 2026-01-06 |
 
         <a href="https://github.com/smcclatchy/spatial-transcriptomics/edit/main/episodes/differential-expression-testing.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -417,7 +417,7 @@ As a reminder, those look like:</p>
 <span>                        <span class="st">"layer_guess"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"Layer"</span><span class="op">)</span> </span></code></pre>
 </div>
-<figure><img src="../fig/differential-expression-testing-rendered-layers-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>We identify genes that are upregulated in each annotated brain region
+<figure><img src="../fig/differential-expression-testing-rendered-layers-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>We identify genes that are upregulated in each annotated brain region
 using the <a href="https://satijalab.org/seurat/reference/findallmarkers" class="external-link"><code>FindAllMarkers</code></a>
 function in Seurat. This performs a “one versus rest” comparison of a
 gene’s expression in one region relative to that gene’s expression in
@@ -484,7 +484,7 @@ scRNA-seq. Let’s try this.</p>
 <code class="sourceCode R"><span><span class="fu">SpatialDimPlotColorSafe</span><span class="op">(</span><span class="va">sct_st</span>, <span class="st">"seurat_clusters"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"Cluster"</span><span class="op">)</span> </span></code></pre>
 </div>
-<figure><img src="../fig/differential-expression-testing-rendered-clusters-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Now, we will use nearly identical code as above to perform the
+<figure><img src="../fig/differential-expression-testing-rendered-clusters-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Now, we will use nearly identical code as above to perform the
 differential expression analysis. We only change each cell’s identity
 class with the <a href="https://satijalab.github.io/seurat-object/reference/Idents.html" class="external-link"><code>Idents</code></a>
 function, to associate each cell with its cluster.</p>
@@ -525,7 +525,7 @@ clusters. We will do so using a confusion matrix.</p>
 <span>        axis.text.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, vjust <span class="op">=</span> <span class="fl">1</span>, hjust<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">xlab</span><span class="op">(</span><span class="st">"Annotation-based DE Genes"</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ylab</span><span class="op">(</span><span class="st">"Cluster-based DE Genes"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/differential-expression-testing-rendered-de-comparison-confusion-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>The above plot shows only marginal overlap between the
+<figure><img src="../fig/differential-expression-testing-rendered-de-comparison-confusion-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>The above plot shows only marginal overlap between the
 annotation-derived DE genes on the x axis and the cluster-derived DE
 genes on the y axis. This might indicate that the two approaches are
 complementary. In fact, they could be used in conjunction. We could have
@@ -580,7 +580,8 @@ run.</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error: 'RunMoransI' requires either Rfast2 or ape to be installed</code></pre>
+<pre class="error" tabindex="0"><code>Error:
+! 'RunMoransI' requires either Rfast2 or ape to be installed</code></pre>
 </div>
 <p><code>FindSpatiallyVariableFeatures</code> returns a Seurat object,
 populated with Moran’s I-derived results. Normally, we would use the <a href="https://satijalab.github.io/seurat-object/reference/VariableFeatures.html" class="external-link"><code>SpatiallyVariableFeatures</code></a>
@@ -602,7 +603,8 @@ and associated p-values:</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in svg@assays: no applicable method for `@` applied to an object of class "function"</code></pre>
+<pre class="error" tabindex="0"><code>Error in `svg@assays`:
+! no applicable method for `@` applied to an object of class "function"</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -613,7 +615,8 @@ and associated p-values:</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'head': object 'morans_i_genes' not found</code></pre>
+<pre class="error" tabindex="0"><code>Error in `h()`:
+! error in evaluating the argument 'x' in selecting a method for function 'head': object 'morans_i_genes' not found</code></pre>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="correlation-of-region-specific-differentially-expressed-genes-and-spatially-variable-genes">Correlation of Region-specific Differentially Expressed Genes and
@@ -636,7 +639,8 @@ region.</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'merge': object 'morans_i_genes' not found</code></pre>
+<pre class="error" tabindex="0"><code>Error in `h()`:
+! error in evaluating the argument 'x' in selecting a method for function 'merge': object 'morans_i_genes' not found</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -647,7 +651,8 @@ region.</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in eval(e, x, parent.frame()): object 'cluster' not found</code></pre>
+<pre class="error" tabindex="0"><code>Error:
+! object 'cluster' not found</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -660,7 +665,8 @@ region.</p>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in log2(df$p_val_adj): non-numeric argument to mathematical function</code></pre>
+<pre class="error" tabindex="0"><code>Error in `log2()`:
+! non-numeric argument to mathematical function</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -678,7 +684,8 @@ non-missing arguments to max; returning -Inf</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in `$&lt;-.data.frame`(`*tmp*`, log_p_val_adj, value = numeric(0)): replacement has 0 rows, data has 56</code></pre>
+<pre class="error" tabindex="0"><code>Error in `$&lt;-.data.frame`:
+! replacement has 0 rows, data has 56</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -698,7 +705,8 @@ non-missing arguments to max; returning -Inf</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in (function (cond) : error in evaluating the argument 'x' in selecting a method for function 'as.matrix': Can't select columns that don't exist.
+<pre class="error" tabindex="0"><code>Error:
+! error in evaluating the argument 'x' in selecting a method for function 'as.matrix': Can't select columns that don't exist.
 ✖ Column `gene` doesn't exist.</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb25">
@@ -712,7 +720,8 @@ non-missing arguments to max; returning -Inf</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error: object 'p_val_adj_matrix' not found</code></pre>
+<pre class="error" tabindex="0"><code>Error:
+! object 'p_val_adj_matrix' not found</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -733,7 +742,8 @@ non-missing arguments to max; returning -Inf</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error: object 'p_val_adj_matrix' not found</code></pre>
+<pre class="error" tabindex="0"><code>Error:
+! object 'p_val_adj_matrix' not found</code></pre>
 </div>
 <p>The heatmap visualization reveals a key finding of our analysis:
 genes displaying the highest Moran’s I values show distinct expression
@@ -872,7 +882,7 @@ sample, indicating that batch effects are not a significant concern.</p>
 <span>  <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"PCA Plot Annotated by Layer (Shapes)"</span><span class="op">)</span></span>
 <span><span class="va">PCAPlot_layer_symbol</span></span></code></pre>
 </div>
-<p><img src="../fig/differential-expression-testing-rendered-pca_results-1.png" style="display: block; margin: auto;" class="figure">
+<p><img src="../fig/differential-expression-testing-rendered-pca_results-1.png" alt="" style="display: block; margin: auto;" class="figure">
 #<img src="../fig/de_pca.png" alt="" class="figure"></p>
 <p>The PCA plot indeed shows that the dots are clustered by layer rather
 than by sample, validating that the layers are the primary source of
@@ -1299,7 +1309,7 @@ any links that you are not going to use.
   "url": "https://smcclatchy.github.io/spatial-transcriptomics/instructor/differential-expression-testing.html",
   "identifier": "https://smcclatchy.github.io/spatial-transcriptomics/instructor/differential-expression-testing.html",
   "dateCreated": "2024-03-01",
-  "dateModified": "2025-12-02",
+  "dateModified": "2026-01-06",
   "datePublished": "2026-01-06"
 }
 
