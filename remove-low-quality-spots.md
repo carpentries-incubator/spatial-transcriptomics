@@ -315,7 +315,7 @@ keep them.
 SpatialDimPlot(filter_st, group.by = "keep")
 ```
 
-<img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+<img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-13-1.png" alt="" style="display: block; margin: auto;" />
 
 When you examine the spots that have been flagged, it is important to look for 
 patterns. If a contiguous section of tissue contains spots that will be removed,
@@ -374,7 +374,7 @@ obj$keep_counts <- keep_counts
 SpatialDimPlot(obj, group.by = "keep_counts")
 ```
 
-<img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" />
 
 Note that the spots that we have flagged seem to correspond to stripes in the
 tissue section. These may be regions of the brain which have lower levels of
@@ -414,7 +414,7 @@ obj$keep_counts <- keep_counts
 SpatialDimPlot(obj, group.by = "keep_counts")
 ```
 
-<img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-17-1.png" alt="" style="display: block; margin: auto;" />
 
 Note that the spots that we have flagged are largely outside of the lower left.
 Later in the lesson, we will find that this is the "white matter", and this 
@@ -427,7 +427,7 @@ SpatialFeaturePlot(obj, features = "percent.mt") +
   labs(title = "Percentage MitochondrialExpression")
 ```
 
-<img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="fig/remove-low-quality-spots-rendered-unnamed-chunk-18-1.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 rm(obj)

@@ -75,7 +75,7 @@ hist(colSums2(counts), breaks = 100,
      main = "Histogram of Counts per Spot")
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-2-1.png" alt="" style="display: block; margin: auto;" />
 
 As you can see, the total counts per spot ranges cross four orders of 
 magnitude. Some of this may be due to the biology of the tissue, *i.e.* some 
@@ -134,7 +134,7 @@ SpatialDimPlotColorSafe(filter_st[, !is.na(filter_st[[]]$layer_guess)],
                         "layer_guess") + labs(fill="Layer")
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-4-1.png" alt="" style="display: block; margin: auto;" />
 
 We noted that the authors used cellular density to aid in discerning layers. 
 Let's see how those H&E-derived cell counts vary across layers.
@@ -149,7 +149,7 @@ g <- g + geom_boxplot() + xlab("Layer") + ylab("Cell Count")
 g
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-5-1.png" alt="" style="display: block; margin: auto;" />
 
 We see that the white matter (WM) has increased cells per spot, whereas Layer 1 
 has fewer cells per spot.
@@ -161,7 +161,7 @@ We can also plot these cell counts spatially.
 SpatialFeaturePlot(filter_st, "cell_count")
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-6-1.png" alt="" style="display: block; margin: auto;" />
 
 The cell counts partially reflect the banding of the layers.
 
@@ -178,7 +178,7 @@ g <- g + geom_boxplot()
 g
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" />
 
 Layer 1 has fewer total read counts, consistent with its lower cell count. An increase in 
 total read counts consistent with that in cell count is not observed for the white matter, 
@@ -288,7 +288,7 @@ Warning in scale_y_continuous(trans = "log2"): log-2 transformation introduced
 infinite values.
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-11-1.png" alt="" style="display: block; margin: auto;" />
 
 There is a clear relationship between the mean and variance of gene expression.
 Our goal was instead that the variance be independent of the 
@@ -342,7 +342,7 @@ Warning in scale_y_continuous(trans = "log2"): log-2 transformation introduced
 infinite values.
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-13-1.png" alt="" style="display: block; margin: auto;" />
 
 We see that the trend line nicely fits the data -- *i.e.*, it characterizes the
 observed variance as a function of the mean for the vast majority of genes.
@@ -381,7 +381,7 @@ g <- g + xlab("Log Mean CPM") + ylab("Variance of\nTrend-Standardized CPMs")
 g
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" />
 
 Indeed, many genes do have a variance near one. 
 
@@ -452,7 +452,7 @@ VariableFeaturePlot(cpm_st) + NoLegend()
 Warning in scale_x_log10(): log-10 transformation introduced infinite values.
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-17-1.png" alt="" style="display: block; margin: auto;" />
 
 Notice that this plot is similar to that we created manually. 
 
@@ -529,7 +529,7 @@ plot_lognorm <- LabelPoints(plot = plot_lognorm, points = top15, repel = TRUE)
 plot_lognorm
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-20-1.png" alt="" style="display: block; margin: auto;" />
 
 As with the standardized CPM values above, we have significantly reduced the
 dependence of variance in gene expression on its mean -- at least at all but the
@@ -549,7 +549,7 @@ Putting this concern aside for a moment, let's look at the spatial, normalized e
 SpatialFeaturePlot(lognorm_st, slot="data", c("SCGB2A2", "PLP1"))
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-21-1.png" alt="" style="display: block; margin: auto;" />
 
 Both clearly show significant spatial variability -- despite the fact that we
 did not explicitly query for genes whose expression varied spatially. We will look at approaches
@@ -569,7 +569,7 @@ at the expression of two, known layer-restricted marker genes -- <i>MOBP</i> and
 SpatialFeaturePlot(lognorm_st, slot="data", c("MOBP", "PCP4"))
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-22-1.png" alt="" style="display: block; margin: auto;" />
 
 Indeed, this is what we observe.
 
@@ -663,7 +663,7 @@ corrected_counts_sct <- LayerData(sct_st, layer = "counts", assay = "SCT")
 hist(colSums2(corrected_counts_sct), main = "Corrected counts (SCT)")
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-28-1.png" alt="" style="display: block; margin: auto;" />
 
 Let's plot the mean-variance relationship. Notice that SCTransform
 implicitly computes variable features, so we do not need to explicitly
@@ -683,7 +683,7 @@ plot_sct    <- LabelPoints(plot = plot_sct, points = top15SCT, repel = TRUE)
 plot_sct
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-29-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-29-1.png" alt="" style="display: block; margin: auto;" />
 
 Notice that VariableFeaturePlot outputs slightly different axes, depending on the transformed
 data to display. In this case, for SCTransformed data, it plots the geometric mean (mean of the log counts) 
@@ -702,7 +702,7 @@ following SCTransform. One of these, <i>PLP1</i>, we have already seen above.
 SpatialFeaturePlot(sct_st, slot="data", c("MBP", "PLP1"))
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-30-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-30-1.png" alt="" style="display: block; margin: auto;" />
 
 Both genes have stunning spatially variable expresion. And, here, that variability
 happens to reflect the underlying layered architecture of the brain. As we noted above,
@@ -721,7 +721,7 @@ layer-restricted expression following normalization with SCTransform.
 SpatialFeaturePlot(sct_st, slot="data", c("MOBP", "PCP4"))
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-31-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-31-1.png" alt="" style="display: block; margin: auto;" />
 
 Indeed, they do. We conclude that SCTransform normalization looks reasonable.
 
@@ -775,7 +775,7 @@ sum_sct <- LayerData(sct_st, layer = "data")
 hist(colSums2(sum_sct), main = "SCT", xlab = "Summed, Normalized Expression Values")
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-32-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-32-1.png" alt="" style="display: block; margin: auto;" />
 
 Notice that the log-normalization has a range of summed expression values per spot spanning
 several orders of magnitude. The SCTransform has a more uniform
@@ -788,13 +788,13 @@ Next, we will compare the mean-variance plots between the two methods.
 plot_lognorm
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-33-1.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-33-1.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 plot_sct
 ```
 
-<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-33-2.png" style="display: block; margin: auto;" />
+<img src="fig/apply-normalization-methods-rendered-unnamed-chunk-33-2.png" alt="" style="display: block; margin: auto;" />
 
 Following SCTransform, the variance is largely stable across a range of mean expression values.
 Certainly, we do not observe the wild ripple in the mean-variance trend at the

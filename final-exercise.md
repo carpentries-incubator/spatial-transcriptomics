@@ -120,7 +120,7 @@ Preprocessing lesson and adapt it to your tissue sample.
 SpatialFeaturePlot(st_obj, features = "nCount_Spatial")
 ```
 
-<img src="fig/final-exercise-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="fig/final-exercise-rendered-unnamed-chunk-4-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::
 
@@ -1462,7 +1462,7 @@ Calculating gene attributes
 ```
 
 ``` output
-Wall clock passed: Time difference of 5.171407 mins
+Wall clock passed: Time difference of 5.244776 mins
 ```
 
 ``` output
@@ -1486,7 +1486,7 @@ Set default assay to SCT
 VariableFeaturePlot(st_obj, log = NULL)
 ```
 
-<img src="fig/final-exercise-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+<img src="fig/final-exercise-rendered-unnamed-chunk-6-1.png" alt="" style="display: block; margin: auto;" />
 
 ```output
 Running SCTransform on assay: Spatial
@@ -1539,7 +1539,7 @@ Centering and scaling data matrix
 ElbowPlot(st_obj, ndims = num_pcs)
 ```
 
-<img src="fig/final-exercise-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+<img src="fig/final-exercise-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::
 
@@ -1646,7 +1646,7 @@ UMAPPlot(st_obj,
          label.size = 6)
 ```
 
-<img src="fig/final-exercise-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+<img src="fig/final-exercise-rendered-unnamed-chunk-9-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::
 
@@ -1671,7 +1671,7 @@ SpatialDimPlot(st_obj,
   ggtitle(label = 'Sample 151508')
 ```
 
-<img src="fig/final-exercise-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="fig/final-exercise-rendered-unnamed-chunk-10-1.png" alt="" style="display: block; margin: auto;" />
 
 :::::::::::::::::::::::::::::::::
 

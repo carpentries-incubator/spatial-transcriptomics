@@ -36,7 +36,7 @@ SpatialDimPlotColorSafe(sct_st[, !is.na(sct_st[[]]$layer_guess)],
   labs(fill = "Layer") 
 ```
 
-<img src="fig/differential-expression-testing-rendered-layers-1.png" style="display: block; margin: auto;" />
+<img src="fig/differential-expression-testing-rendered-layers-1.png" alt="" style="display: block; margin: auto;" />
 
 We identify genes that are upregulated in each annotated brain region using the 
 [`FindAllMarkers`](https://satijalab.org/seurat/reference/findallmarkers) 
@@ -105,7 +105,7 @@ SpatialDimPlotColorSafe(sct_st, "seurat_clusters") +
   labs(fill = "Cluster") 
 ```
 
-<img src="fig/differential-expression-testing-rendered-clusters-1.png" style="display: block; margin: auto;" />
+<img src="fig/differential-expression-testing-rendered-clusters-1.png" alt="" style="display: block; margin: auto;" />
 
 Now, we will use nearly identical code as above to perform the differential 
 expression analysis. We only change each cell's identity class with the 
@@ -148,7 +148,7 @@ ggplot(data = df, aes(x = de.anno, y = de.cluster, fill = Freq)) +
   xlab("Annotation-based DE Genes") + ylab("Cluster-based DE Genes")
 ```
 
-<img src="fig/differential-expression-testing-rendered-de-comparison-confusion-1.png" style="display: block; margin: auto;" />
+<img src="fig/differential-expression-testing-rendered-de-comparison-confusion-1.png" alt="" style="display: block; margin: auto;" />
 
 The above plot shows only marginal overlap between the annotation-derived DE 
 genes on the x axis and the cluster-derived DE genes on the y axis. This might 
@@ -196,7 +196,8 @@ svg <-
 ```
 
 ``` error
-Error: 'RunMoransI' requires either Rfast2 or ape to be installed
+Error:
+! 'RunMoransI' requires either Rfast2 or ape to be installed
 ```
 
 `FindSpatiallyVariableFeatures` returns a Seurat object, populated with Moran's 
@@ -217,7 +218,8 @@ morans_i_genes <- svg@assays[["SCT"]]@meta.features %>%
 ```
 
 ``` error
-Error in svg@assays: no applicable method for `@` applied to an object of class "function"
+Error in `svg@assays`:
+! no applicable method for `@` applied to an object of class "function"
 ```
 
 ``` r
@@ -225,7 +227,8 @@ head(morans_i_genes)
 ```
 
 ``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'head': object 'morans_i_genes' not found
+Error in `h()`:
+! error in evaluating the argument 'x' in selecting a method for function 'head': object 'morans_i_genes' not found
 ```
 
 ## Correlation of Region-specific Differentially Expressed Genes and Spatially Variable Genes
@@ -245,7 +248,8 @@ df <- merge(morans_i_genes, de_genes, all.x = TRUE, by = "gene")
 ```
 
 ``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'merge': object 'morans_i_genes' not found
+Error in `h()`:
+! error in evaluating the argument 'x' in selecting a method for function 'merge': object 'morans_i_genes' not found
 ```
 
 ``` r
@@ -253,7 +257,8 @@ df <- subset(df, !is.na(cluster))
 ```
 
 ``` error
-Error in eval(e, x, parent.frame()): object 'cluster' not found
+Error:
+! object 'cluster' not found
 ```
 
 ``` r
@@ -263,7 +268,8 @@ df$log_p_val_adj <- -log2(df$p_val_adj)
 ```
 
 ``` error
-Error in log2(df$p_val_adj): non-numeric argument to mathematical function
+Error in `log2()`:
+! non-numeric argument to mathematical function
 ```
 
 ``` r
@@ -277,7 +283,8 @@ non-missing arguments to max; returning -Inf
 ```
 
 ``` error
-Error in `$<-.data.frame`(`*tmp*`, log_p_val_adj, value = numeric(0)): replacement has 0 rows, data has 56
+Error in `$<-.data.frame`:
+! replacement has 0 rows, data has 56
 ```
 
 ``` r
@@ -294,7 +301,8 @@ p_val_adj_matrix <- df %>%
 ```
 
 ``` error
-Error in (function (cond) : error in evaluating the argument 'x' in selecting a method for function 'as.matrix': Can't select columns that don't exist.
+Error:
+! error in evaluating the argument 'x' in selecting a method for function 'as.matrix': Can't select columns that don't exist.
 ✖ Column `gene` doesn't exist.
 ```
 
@@ -305,7 +313,8 @@ p_val_adj_matrix <- p_val_adj_matrix[, layer.order]
 ```
 
 ``` error
-Error: object 'p_val_adj_matrix' not found
+Error:
+! object 'p_val_adj_matrix' not found
 ```
 
 ``` r
@@ -323,7 +332,8 @@ Heatmap(p_val_adj_matrix,
 ```
 
 ``` error
-Error: object 'p_val_adj_matrix' not found
+Error:
+! object 'p_val_adj_matrix' not found
 ```
 
 The heatmap visualization reveals a key finding of our analysis: genes 
@@ -439,7 +449,7 @@ PCAPlot_layer_symbol <- DimPlot(merged_pseudobulk, reduction = "pca", shape.by =
 PCAPlot_layer_symbol
 ```
 
-<img src="fig/differential-expression-testing-rendered-pca_results-1.png" style="display: block; margin: auto;" />
+<img src="fig/differential-expression-testing-rendered-pca_results-1.png" alt="" style="display: block; margin: auto;" />
 #![PCA of samples per layer](fig/de_pca.png){alt=''}
 
 The PCA plot indeed shows that the dots are clustered by layer rather than by sample, validating that the layers are the primary source of variation, rather than differences between samples from different subjects.

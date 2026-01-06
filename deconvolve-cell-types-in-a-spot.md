@@ -237,7 +237,7 @@ SpatialDimPlotColorSafe(sct_st[, !is.na(sct_st[[]]$classification)],
                         "classification")
 ```
 
-<img src="fig/deconvolve-cell-types-in-a-spot-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="fig/deconvolve-cell-types-in-a-spot-rendered-unnamed-chunk-10-1.png" alt="" style="display: block; margin: auto;" />
 
 
 ``` r
@@ -246,7 +246,7 @@ SpatialDimPlotColorSafe(sct_st[, !is.na(sct_st[[]]$layer_guess)],
                         "layer_guess")
 ```
 
-<img src="fig/deconvolve-cell-types-in-a-spot-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+<img src="fig/deconvolve-cell-types-in-a-spot-rendered-unnamed-chunk-11-1.png" alt="" style="display: block; margin: auto;" />
 
 
 To be more quantitative, we can compute a confusion matrix comparing the layers 
@@ -267,7 +267,7 @@ ggplot(data = df, aes(x = Annotation, y = Prediction, fill = Freq)) +
         axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
-<img src="fig/deconvolve-cell-types-in-a-spot-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="fig/deconvolve-cell-types-in-a-spot-rendered-unnamed-chunk-12-1.png" alt="" style="display: block; margin: auto;" />
 
 Note that there is a fairly strong correlation between the predicted and 
 observed layers, particularly for the pairs Oligodendrocytes and WM 

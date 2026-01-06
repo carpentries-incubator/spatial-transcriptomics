@@ -380,7 +380,7 @@ effect. Review the following figure to explore the relationships between effect
 size, sample size, and power. What is the relationship between effect size and 
 sample size? Between sample size and power?
 
-<img src="fig/data-and-study-design-rendered-power-curve-2-1.png" style="display: block; margin: auto;" />
+<img src="fig/data-and-study-design-rendered-power-curve-2-1.png" alt="" style="display: block; margin: auto;" />
 
 Adapted from [How to Create Power Curves in ggplot](https://levibaguley.github.io/2020/06/22/how-to-create-power-curves-in-ggplot/) 
 by Levi Baguley

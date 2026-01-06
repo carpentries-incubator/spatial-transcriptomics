@@ -374,7 +374,7 @@ plot2 <- SpatialDimPlot(filter_st) +
 plot1 | plot2
 ```
 
-<img src="fig/data-preprocessing-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+<img src="fig/data-preprocessing-rendered-unnamed-chunk-11-1.png" alt="" style="display: block; margin: auto;" />
 
 ## Plot UMI and Gene Counts across Tissue
 

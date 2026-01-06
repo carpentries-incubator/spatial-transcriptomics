@@ -146,7 +146,7 @@ indicates that adding more PCs doesn't account for more of the variance.
 ElbowPlot(sct_st, ndims = 75)
 ```
 
-<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" />
 
 From the plot above, we would normally select somewhere between 10 and 20 PCs 
 because there seems to be little benefit in adding more PCs. Adding more PCs 
@@ -251,7 +251,7 @@ SpatialDimPlotColorSafe(sct_st[, !is.na(sct_st[[]]$layer_guess)], "layer_guess")
   labs(fill="Layer") 
 ```
 
-<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" />
 
 The authors describe six layers arranged from the upper right to the lower left,
 and a white matter (WM) later. At this stage of the analysis, we have nine 
@@ -267,7 +267,7 @@ identities by looking for the clarity of the stripes forming each layer.
 SpatialDimPlotColorSafe(sct_st, "seurat_clusters") + labs(fill="Cluster") 
 ```
 
-<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
+<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-8-1.png" alt="" style="display: block; margin: auto;" />
 
 How many layers do we have compared to the publication? What do you think about
 the quality of the layers in this plot? Are there clear layers in the tissue?
@@ -295,7 +295,7 @@ UMAPPlot(sct_st,
          label.size = 6)
 ```
 
-<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-9-1.png" alt="" style="display: block; margin: auto;" />
 
 We have made some decisions above which might affect the quality of our spot 
 clusters, including the number of nearest neighbors, the number of variable 
@@ -430,7 +430,7 @@ SpatialDimPlotColorSafe(sct_st, "seurat_clusters") +
   labs(fill = "Cluster")
 ```
 
-<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="fig/feature-selection-dimensionality-reduction-clustering-rendered-unnamed-chunk-12-1.png" alt="" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
